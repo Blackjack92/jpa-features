@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: jpa-features
+  datasource:
+    username: postgres
+    password: secret
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/jpa_features"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
