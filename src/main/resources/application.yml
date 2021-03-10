@@ -5,8 +5,10 @@ spring:
     username: postgres
     password: secret
     driver-class-name: org.postgresql.Driver
-    url: "jdbc:postgresql://localhost:5432/jpa_features"
+    url: "jdbc:postgresql://localhost:5432/jpa_features?createDatabaseIfNotExist=true"
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     show-sql: true
+    generate-ddl: true
     hibernate:
       ddl-auto: create
