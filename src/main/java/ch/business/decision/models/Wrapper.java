@@ -1,7 +1,6 @@
 package ch.business.decision.models;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
@@ -9,7 +8,7 @@ import javax.persistence.*;
 @Data
 @MappedSuperclass
 @RequiredArgsConstructor
-public abstract class Wrapper<T extends IWrapperContent> {
+public abstract class Wrapper<T> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

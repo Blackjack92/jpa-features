@@ -9,9 +9,8 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@DiscriminatorValue("PERSON")
 @Entity
-public class Person implements IWrapperContent {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
