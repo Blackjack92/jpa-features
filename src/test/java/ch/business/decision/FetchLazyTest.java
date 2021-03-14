@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,17 +45,21 @@ public class FetchLazyTest {
         employee2.setFirstName("Jane");
         employee2.setLastName("Doe");
 
+        List<Person> employees = new ArrayList<>();
+        employees.add(employee1);
+        employees.add(employee2);
+
         Company company = new Company();
         company.setName("SuperCompany");
-        company.setEmployees(List.of(employee1, employee2));
+        company.setEmployees(employees);
         this.repository.saveAndFlush(company);
 
         Optional<Company> companyOptional = this.repository.findByName("SuperCompany");
 
         assertThat(companyOptional).isNotEmpty();
         assertThrows(LazyInitializationException.class, () -> {
-            List<Person> employees = companyOptional.get().getEmployees();
-            employees.get(0);
+            List<Person> readEmployees = companyOptional.get().getEmployees();
+            readEmployees.get(0);
         });
     }
 
@@ -68,16 +73,20 @@ public class FetchLazyTest {
         employee2.setFirstName("Jane");
         employee2.setLastName("Doe");
 
+        List<Person> employees = new ArrayList<>();
+        employees.add(employee1);
+        employees.add(employee2);
+
         Company company = new Company();
         company.setName("SuperCompany");
-        company.setEmployees(List.of(employee1, employee2));
+        company.setEmployees(employees);
         this.repository.saveAndFlush(company);
 
         Optional<Company> companyOptional = this.repository.fetchByName("SuperCompany");
 
         assertThat(companyOptional).isNotEmpty();
 
-        List<Person> employees = companyOptional.get().getEmployees();
-        employees.get(0);
+        List<Person> readEmployees = companyOptional.get().getEmployees();
+        readEmployees.get(0);
     }
 }

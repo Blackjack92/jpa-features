@@ -6,12 +6,6 @@
 - Maven
 - IntelliJ
 
-Hibernate implementiert Standard JPA 
-EclipseLink -||-
-
-Spring Data JPA setzt auf JPA
-Spring Data JDBC
-
 ## Themen: In Richtung Spring Data JPA
     - Object Lifecycle (Thorben Janssen) JPA Entity Lifecycle Model (https://www.youtube.com/watch?v=Y7PpjerZkc0)
     - 10 Common Hibernate Problems that cripple your performance (https://thorben-janssen.com/common-hibernate-mistakes-cripple-performance/)
@@ -29,22 +23,7 @@ Spring Data JDBC
     - Microservice Patterns
     - @SQL für Integrationstests
 
---> Ebene des Pitfalls: Spring, Spring Data, JPA, DB
-https://codete.com/blog/5-common-spring-transactional-pitfalls/
-
---> Video der JUG: Drei Patterns für skalierbare Microservices
-
---> Aufbau bei einer Code Sequenz
-Zeit Messung
-
-Beispiel:
-Docker
-Feature Toggle: https://www.baeldung.com/spring-feature-flags
-Cleanup Script - eventuell flyway?
-
 ## Object Lifecycle
-
-
 
 ## Feature 1: Readonly Repository
 Bei der Verwendung einer strikten Architektur, bei der nicht aus versehen Daten aus der Datenbank verändert werden sollten, empfiehlt es sich auf ein Readonly-Repository zurückzugreifen.
@@ -56,9 +35,6 @@ Bei der Verwendung einer strikten Architektur, bei der nicht aus versehen Daten 
 ```
 
 ## Feature 2: @Transactional (und Pitfalls)
-
-
-
 
 ## Feature 3: Projections (Kommunikation mit dem UI) 
 
