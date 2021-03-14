@@ -6,7 +6,6 @@ import ch.business.decision.models.Person;
 import ch.business.decision.repositories.PersonRepository;
 import ch.business.decision.utils.Utils;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,6 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @SpringBootTest
 public class StateMachineTest {
-
-
 
     @Autowired
     private StateMachine stateMachine;
